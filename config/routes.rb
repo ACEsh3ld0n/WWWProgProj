@@ -1,5 +1,8 @@
 WWWProgProj::Application.routes.draw do
+  resources :players
+
   get "welcome/index"
+  #get "players/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -51,6 +54,7 @@ WWWProgProj::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
     root :to => 'welcome#index'
+    #root to: 'players#index', as: 'players'
 
   # See how all your routes lay out with "rake routes"
 

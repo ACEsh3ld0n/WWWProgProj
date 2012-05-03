@@ -24,6 +24,9 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  
+  # ACE: For Datatables
+  # gem 'jquery-datatables-rails'
 end
 
 gem 'jquery-rails'

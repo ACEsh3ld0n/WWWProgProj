@@ -1,3 +1,11 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 <p>Testing git</p>
+
+          
+          <%= content_for :head do %>
+          <li><a href="index.html">Home</a></li>
+          <li class="current"><a href="another_page.html">Another Page</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <% end %>
+

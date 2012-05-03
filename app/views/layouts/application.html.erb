@@ -1,14 +1,186 @@
+<!--
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WWWProgProj</title>
+  <title>Football Team Management</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+<%# for the .css.scss stylesheets %>
+<body class='<%= controller.controller_name %>' >
 
-<%= yield %>
+
+
 
 </body>
 </html>
+-->
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pragprog Books Online Store</title>
+<%= stylesheet_link_tag "application" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tag %>
+</head>
+<body class="<%= controller.controller_name %>">
+<div id="banner" >
+<%= image_tag("logo.png") %>
+<%= @page_title || "Pragmatic Bookshelf" %>
+</div>
+<div id="columns" >
+<div id="side" >
+<ul>
+<li> <a href="http://www...." >Home</a> </li>
+<li> <a href="http://www..../faq" >Questions</a> </li>
+<li> <a href="http://www..../news" >News</a> </li>
+<li> <a href="http://www..../contact" >Contact</a> </li>
+</ul>
+</div>
+<div id="main" >
+<!--the yield goes here
+</div>
+</div>
+</body>
+</html>
+-->
+
+<!--
+    <!DOCTYPE html>  
+    <head>  
+      <meta charset="utf-8">  
+      <title>Our First HTML5 Page</title>  
+      <meta name="description" content="Welcome to my basic template.">  
+      <%= stylesheet_link_tag "application" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tag %>
+    </head>  
+      
+    <body class="<%= controller.controller_name %>"> 
+        <div id="wrapper">  
+            <header>  
+                <h1>Welcome, one and all!</h1>  
+      
+                <nav>  
+                    <ul>  
+                        <li><a rel="external" href="#">Home</a></li>  
+                        <li><a rel="external" href="#">About us</a></li>  
+                        <li><a rel="external" href="#">Contacts</a></li>  
+                    </ul>  
+                </nav>  
+            </header>  
+      
+            <div id="core" class="clearfix">  
+                <section id="left">  
+                    <p>some content here.</p>  
+                </section>  
+      
+                <section id="right">  
+                    <p>but some here as well!</p>  
+                </section>  
+            </div>  
+      
+            <footer>  
+                <p>Some copyright and legal notices here. Maybe use the © symbol a bit.</p>  
+            </footer>  
+        </div>  
+      
+    </body>  
+    </html>  
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Football Team Management</title>
+	<%= stylesheet_link_tag "application" %>
+	<%= javascript_include_tag "application", :media => "all" %>
+	<%= csrf_meta_tag %>
+	
+</head>
+
+<body class="<%= controller.controller_name %>">
+<!---------------------------------------------------------------------------------------->
+  <div id="main">
+  	<!---------------------------------------------------------------------------------------->
+    <div id="header">
+      <div id="logo">
+        <h1>simplestyle<a href="#">_7</a></h1>
+        <div class="slogan">Cool slogan!</div>
+      </div>
+      <!---------------------------------------------------------------------------------------->
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="current" in the li tag for the selected page - to highlight which page you're on 
+          <li class="current"><a href="index.html">Home</a></li>
+          <li class="current"><a href="/players/new">Examples</a></li>
+          <li class="current"><a href="page.html">A Page</a></li>
+          <li class="current"><a href="another_page.html">Another Page</a></li>
+          <li><a href="contact.html">Contact Us</a></li>-->
+          <%= yield :head %>
+        </ul>
+      </div>
+    </div>
+    <!---------------------------------------------------------------------------------------->
+    <div id="site_content">
+      <div id="sidebar_container">
+        <img class="paperclip"  src="images/paperclip.png" alt="paperclip"/>
+        <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <h3>Latest News</h3>
+        <h4>What's the News?</h4>
+        <h5>1st July 2011</h5>
+        <p>Put your latest news item here, or anything else you would like in the sidebar!<br /><a href="#">Read more</a></p>
+        </div>
+        <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
+        <div class="sidebar">
+          <h3>Newsletter</h3>
+          <p>If you would like to receive our newletter, please enter your email address and click 'Subscribe'.</p>
+          <form method="post" action="#" id="subscribe">
+            <p style="padding: 0 0 9px 0;"><input class="search" type="text" name="email_address" value="your email address" onclick="javascript: document.forms['subscribe'].email_address.value=''" /></p>
+            <p><input class="subscribe" name="subscribe" type="submit" value="Subscribe" /></p>
+          </form>
+        </div>
+        <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
+        <div class="sidebar">
+          <h3>Latest Blog</h3>
+          <h4>Website Goes Live</h4>
+          <h5>1st July 2011</h5>
+          <p>We have just launched our new website. Take a look around, we'd love to know what you think.....<br /><a href="#">read more</a></p>
+        </div>
+      </div>
+      <!---------------------------------------------------------------------------------------->
+      <div id="content">
+      	<%= yield %>
+        <!-- insert the page content here 
+        <h1>Welcome to the simplestyle_7 template</h1>
+        <p>This standards compliant, simple, fixed width website template is released as an 'open source' design (under a <a href="http://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to download and use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from HTML5webtemplates.co.uk' link in the footer of the template, but other than that...</p>
+        <p>This template is written entirely in <strong>HTML5</strong> and <strong>CSS</strong>, and can be validated using the links in the footer.</p>
+        <p>You can view more free HTML5 web templates <a href="http://www.html5webtemplates.co.uk">here</a>.</p>
+        <p>This template is a fully functional 5 page website, with an <a href="examples.html">examples</a> page that gives examples of all the styles available with this design.</p>
+        <h2>Browser Compatibility</h2>
+        <p>This template has been tested in the following browsers:</p>
+        <ul>
+          <li>Internet Explorer 8</li>
+          <li>Internet Explorer 7</li>
+          <li>FireFox 3.5</li>
+          <li>Google Chrome 6</li>
+          <li>Safari 4</li>
+        </ul>-->
+      </div>
+    </div>
+    <!---------------------------------------------------------------------------------------->
+    <div id="footer">
+      <p>Copyright &copy; simplestyle_7 | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
+    </div>
+  </div>
+<!---------------------------------------------------------------------------------------->
+  
+</body>
+</html>
+
